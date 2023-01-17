@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\mock",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\budget-items",
+    "\\src\\app\\expense-items",
+    "\\src\\app\\sections",
+    "\\src\\app\\sections\\header"
+  ],
+  "SelectedNode": "\\mock\\db.json",
+  "PreviewInSolutionExplorer": false
+}

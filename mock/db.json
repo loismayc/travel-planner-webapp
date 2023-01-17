@@ -1,0 +1,99 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "title": "Travel"
+    },
+    {
+      "id": 2,
+      "title": "Bills"
+    },
+    {
+      "id": 3,
+      "title": "Health"
+    },
+    {
+      "id": 4,
+      "title": "Concert"
+    }
+  ],
+
+  "expenses": [
+    {
+      "id": 1,
+      "cost": 3500.00,
+      "name": "Accomodation",
+      "note": "",
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "cost": 6000.00,
+      "name": "Plane ticket",
+      "note": "Roundtrip fare",
+      "category_id": 1
+    },
+    {
+      "id": 3,
+      "cost": 8000.00,
+      "name": "Food",
+      "note": "",
+      "category_id": 1
+    },
+    {
+      "id": 4,
+      "cost": 2500.00,
+      "name": "Electric Bill",
+      "note": "one month payment",
+      "category_id": 2
+    }
+  ],
+
+  "budget": [
+    {
+      "id": 1,
+      "amount": 20000.00,
+      "remaining": 2000.00,
+      "category": "Travel"
+    },
+    {
+      "id": 2,
+      "amount": 5000.00,
+      "remaining": 10.00,
+      "category": "Bills"
+
+    },
+    {
+      "id": 3,
+      "amount": 2000.00,
+      "remaining": 150.00,
+      "category": "Health"
+
+    },
+    {
+      "id": 4,
+      "amount": 500.00,
+      "remaining": 100.00,
+      "category": "Concert"
+
+    }
+  ],
+
+  "funds": [
+    {
+      "id": 1,
+      "name": "Total Budget Allocation",
+      "total": 20000.00
+    },
+    {
+      "id": 2,
+      "name": "Expenses",
+      "total": 5000.00
+    },
+    {
+      "id": 3,
+      "name": "Remaining Fund",
+      "total": 20000.00
+    }
+  ]
+}

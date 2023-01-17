@@ -1,0 +1,63 @@
+<div class="container mb-5">
+
+  <div class="dropdown">
+    <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Select Category
+    </a>
+
+    <ul class="dropdown-menu" >
+      <li><a class="dropdown-item" href="#" *ngFor="let category of categories">{{category.title}}</a></li>
+  
+    </ul>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Expenses</th>
+        <th scope="col">Notes</th>
+        <th scope="col">Cost</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expense of myExpenses">
+        <td>{{expense.name}}</td>
+        <td>{{expense.note}}</td>
+        <td>₱ {{expense.cost}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+  
+
+  <hr />
+  <div class="row">
+    <div class="col-sm-6">
+      <h5>Total Expense</h5>
+      <p>₱₱₱₱₱</p>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 25rem;">
+        <div class="card-body">
+          <h5 class="card-title">Item</h5>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Cost</h5>
+          <div class="input-group mb-3">
+            <span class="input-group-text">₱</span>
+            <input type="text" class="form-control">
+            <span class="input-group-text">.00</span>
+          </div>
+          <div class="input-group">
+            <span class="input-group-text">Notes</span>
+            <textarea class="form-control"></textarea>
+          </div>
+        </div>
+        <button class="btn btn-primary">Add Expense</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,51 @@
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card" style="width: 25rem;">
+        <div class="card-body" *ngFor="let funds of myFunds">
+          <h5 class="card-title">{{funds.name}}</h5>
+          <h6>₱ {{funds.total}}</h6>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 25rem;">
+        <div class="card-body">
+          <h5 class="card-title">Category</h5>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Budget</h5>
+          <div class="input-group mb-3">
+            <span class="input-group-text">₱</span>
+            <input type="text" class="form-control">
+            <span class="input-group-text">.00</span>
+          </div>
+        </div>
+        <button class="btn btn-primary">Add Budget</button>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+  <hr />
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Budget Allocation</th>
+        <th scope="col">Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let budget of myBudget">
+        <td>₱ {{budget.amount}}</td>
+        <td>{{budget.category}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h6>Total Budget: ₱₱₱₱₱₱₱₱₱ </h6>
+
+</div>
