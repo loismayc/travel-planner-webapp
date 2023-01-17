@@ -77,23 +77,5 @@
       "category": "Concert"
 
     }
-  ],
-
-  "funds": [
-    {
-      "id": 1,
-      "name": "Total Budget Allocation",
-      "total": 20000.00
-    },
-    {
-      "id": 2,
-      "name": "Expenses",
-      "total": 5000.00
-    },
-    {
-      "id": 3,
-      "name": "Remaining Fund",
-      "total": 20000.00
-    }
   ]
 }

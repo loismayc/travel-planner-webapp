@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
-import { BudgetItems } from "../models/budget-items";
-import { TotalFund } from "../models/funds";
+import { BudgetItems } from "../../models/budget-items";
 
 @Component({
     selector: "app-budget-items",
@@ -35,21 +34,5 @@ export class BudgetItemsComponent {
         },
     ];
 
-    myFunds: TotalFund[] = [
-        {
-            id: 1,
-            name: "Total Budget Allocation",
-            total: 20000.0,
-        },
-        {
-            id: 2,
-            name: "Expenses",
-            total: 5000.0,
-        },
-        {
-            id: 3,
-            name: "Remaining Fund",
-            total: 15000.0,
-        },
-    ];
+    budgetAllocation = 200000;
 }
