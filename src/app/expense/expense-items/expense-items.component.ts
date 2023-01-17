@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { Categories } from "../models/categories";
-import { ExpenseItem } from "../models/expense-item";
+import { Categories } from "../../models/categories";
+import { ExpenseItem } from "../../models/expense-item";
 
 @Component({
     selector: "app-expense-items",
@@ -13,7 +13,7 @@ export class ExpenseItemsComponent {
             id: 1,
             cost: 3500.0,
             name: "Accomodation",
-            note: "",
+            note: "including service fee",
             category_id: 1,
         },
         {
@@ -23,11 +23,28 @@ export class ExpenseItemsComponent {
             note: "Roundtrip fare",
             category_id: 1,
         },
+
         {
             id: 3,
             cost: 8000.0,
             name: "Food",
-            note: "",
+            note: "for one week",
+            category_id: 1,
+        },
+
+        {
+            id: 3,
+            cost: 8000.0,
+            name: "Electric Bill",
+            note: "for January",
+            category_id: 1,
+        },
+
+        {
+            id: 3,
+            cost: 15000.0,
+            name: "VIP Ticket",
+            note: "with service fee",
             category_id: 1,
         },
     ];

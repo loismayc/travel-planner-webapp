@@ -34,5 +34,7 @@ export class BudgetItemsComponent {
         },
     ];
 
-    budgetAllocation = 200000;
+    totalBudget = 200000;
+    totalExpense = 150000;
+    remaining = 50000;
 }
