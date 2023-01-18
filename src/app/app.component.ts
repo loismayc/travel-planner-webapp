@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Budget } from "./models/budget-input";
 //import { ExpenseItem } from "./models/expense-item";
 
 @Component({
@@ -8,4 +9,9 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
     title = "budget-log-webapp";
+
+    formEventHandler = () => {
+        console.log("Handling event handler");
+        console.log();
+    };
 }

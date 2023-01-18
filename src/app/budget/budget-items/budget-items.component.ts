@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Output, EventEmitter } from "@angular/core";
 import { BudgetItems } from "../../models/budget-items";
 
 @Component({
@@ -37,4 +37,11 @@ export class BudgetItemsComponent {
     totalBudget = 200000;
     totalExpense = 150000;
     remaining = 50000;
+
+    @Output() budgetEvent: EventEmitter<any> = new EventEmitter<any>();
+
+    btnClicked = () => {
+        console.log("Button clicked!");
+        this.budgetEvent.emit();
+    };
 }

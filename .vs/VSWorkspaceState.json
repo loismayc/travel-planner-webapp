@@ -1,14 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\mock",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\budget-items",
-    "\\src\\app\\expense-items",
-    "\\src\\app\\sections",
-    "\\src\\app\\sections\\header"
+    "\\src\\app\\budget",
+    "\\src\\app\\budget\\budget-items",
+    "\\src\\app\\budget\\budget-table",
+    "\\src\\app\\expense",
+    "\\src\\app\\expense\\expense-items",
+    "\\src\\app\\expense\\expense-table",
+    "\\src\\app\\models"
   ],
-  "SelectedNode": "\\mock\\db.json",
+  "SelectedNode": "\\src\\app\\expense\\expense-items\\expense-items.component.html",
   "PreviewInSolutionExplorer": false
 }
