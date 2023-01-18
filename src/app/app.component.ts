@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { Budget } from "./models/budget-input";
-//import { ExpenseItem } from "./models/expense-item";
+//import { BudgetItems } from "./models/budget-input";
+import { BudgetItems } from "./models/budget-items";
 
 @Component({
     selector: "app-root",
@@ -10,8 +10,12 @@ import { Budget } from "./models/budget-input";
 export class AppComponent {
     title = "budget-log-webapp";
 
-    formEventHandler = () => {
+    myBudget: BudgetItems[] = [];
+
+    formEventHandler = (payload: BudgetItems) => {
         console.log("Handling event handler");
-        console.log();
+        console.log(payload);
+
+        this.myBudget.push(payload);
     };
 }

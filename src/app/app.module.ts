@@ -9,6 +9,7 @@ import { BudgetItemsComponent } from "./budget/budget-items/budget-items.compone
 import { FooterComponent } from "./sections/footer/footer.component";
 import { BudgetTableComponent } from "./budget/budget-table/budget-table.component";
 import { ExpenseTableComponent } from "./expense/expense-table/expense-table.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { ExpenseTableComponent } from "./expense/expense-table/expense-table.com
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         // RouterModule.forRoot([
         //      { path: "expense-items", component: ExpenseItemsComponent },
         //   ]),

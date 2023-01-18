@@ -1,6 +1,5 @@
 export interface BudgetItems {
-    id: number;
+    id?: number;
     amount: number;
-    remaining: number;
     category: string;
 }
