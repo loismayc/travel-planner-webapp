@@ -10,6 +10,7 @@ import { FooterComponent } from "./sections/footer/footer.component";
 import { BudgetTableComponent } from "./budget/budget-table/budget-table.component";
 import { ExpenseTableComponent } from "./expense/expense-table/expense-table.component";
 import { FormsModule } from "@angular/forms";
+import { BudgetFormComponent } from './budget/budget-form/budget-form.component';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { FormsModule } from "@angular/forms";
         FooterComponent,
         BudgetTableComponent,
         ExpenseTableComponent,
+        BudgetFormComponent,
     ],
     imports: [
         BrowserModule,
