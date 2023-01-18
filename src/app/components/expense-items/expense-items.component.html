@@ -1,0 +1,39 @@
+<div class="container mb-5">
+
+  <div class="dropdown">
+      <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Select Category
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#" *ngFor="let category of categories" >{{category.title}}</a></li>
+      </ul>
+  </div>
+
+  <div class="container mt-3 mb-5">
+    <div class="row mb-2">
+      <div class="col fw-bolder">
+        Expenses
+      </div>
+      <div class="col fw-bolder">
+        Notes
+      </div>
+      <div class="col fw-bolder">
+        Cost
+      </div>
+    </div>
+    <app-expense-table *ngFor="let e of expenses" expenses="e"></app-expense-table>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h5>Total Expense</h5>
+      <p>₱₱₱₱₱</p>
+    </div>
+    <div class="col-sm-4">
+      <app-expense-form (expenseEvent)="handleExpense($event)"></app-expense-form>
+    </div>
+    </div>
+  </div>
+
+

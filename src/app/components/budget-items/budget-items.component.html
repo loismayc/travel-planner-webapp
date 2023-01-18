@@ -1,0 +1,40 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card" style="width: 25rem;">
+        <div class="card-body">
+          <h5 class="card-title">Overall Budget</h5>
+          <p>₱ {{totalBudget}}</p>
+          <h5 class="card-title">Overall Expense</h5>
+          <p>₱ {{totalExpense}}</p>
+          <h5 class="card-title">Remaining</h5>
+          <p>₱ {{remaining}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <app-budget-form (budgetEvent)="handleBudget($event)"></app-budget-form>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="container mt-4">
+    <div class="row  mb-2">
+      <div class="col fw-bolder">
+        Budget Allocation
+      </div>
+      <div class="col fw-bolder">
+        Category
+      </div>
+    </div>
+    <app-budget-table *ngFor="let o of budgets" [budget]="o"></app-budget-table>
+
+
+
+  </div>
+
+  <!--<h6>Total Budget: ₱₱₱₱₱₱₱₱₱ </h6>-->
+
+</div>
