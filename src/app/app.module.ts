@@ -5,14 +5,17 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 
 import { FormsModule } from "@angular/forms";
-import { HeaderComponent } from "./components/header/header.component";
-import { FooterComponent } from "./components/footer/footer.component";
 import { ExpenseItemsComponent } from "./components/expense-items/expense-items.component";
 import { ExpenseTableComponent } from "./components/expense-table/expense-table.component";
 import { BudgetTableComponent } from "./components/budget-table/budget-table.component";
 import { BudgetItemsComponent } from "./components/budget-items/budget-items.component";
 import { BudgetFormComponent } from "./components/budget-form/budget-form.component";
-import { ExpenseFormComponent } from './components/expense-form/expense-form.component';
+import { ExpenseFormComponent } from "./components/expense-form/expense-form.component";
+import { TravelFormComponent } from "./components/travel-form/travel-form.component";
+import { HeaderComponent } from "./components/sections/header/header.component";
+import { FooterComponent } from "./components/sections/footer/footer.component";
+import { TravelListComponent } from "./components/travel-list/travel-list.component";
+import { TravelOverviewComponent } from './components/travel-overview/travel-overview.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +28,9 @@ import { ExpenseFormComponent } from './components/expense-form/expense-form.com
         HeaderComponent,
         FooterComponent,
         ExpenseFormComponent,
+        TravelFormComponent,
+        TravelListComponent,
+        TravelOverviewComponent,
     ],
     imports: [
         BrowserModule,

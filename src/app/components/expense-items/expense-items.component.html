@@ -1,34 +1,35 @@
-<div class="container mb-5">
+<div class="container mt-3 mb-3">
+  <!-- <select class="form-select" aria-label="Default select example">
+     <option selected>Select Category</option>
+     <option value={{category.id}} *ngFor="let category of categories">{{category.title}}</option>
+   </select>-->
+  <h3>Total Expenses</h3>
+  <h5>{{totalExpenses}}</h5>
+</div>
 
-    <select class="form-select" aria-label="Default select example" >
-      <option selected>Select Category</option>
-      <option value={{category.id}} *ngFor="let category of categories">{{category.title}}</option>
-    </select>
-
-    <div class="container mt-3 mb-5">
-      <div class="row">
-        <div class="col-sm-4">
-          <h5>Total Expense</h5>
-          <p>{{totalExpenses}}</p>
-          <app-expense-form (expenseEvent)="handleExpense($event)"></app-expense-form>
-        </div>
-        <div class="col-sm-8">
-          <div class="row mb-2">
-            <div class="col fw-bolder">
-              Expenses
-            </div>
-            <div class="col fw-bolder">
-              Notes
-            </div>
-            <div class="col fw-bolder">
-              Cost
-            </div>
-          </div>
-          <app-expense-table *ngFor="let e of expenses" [expense]="e"></app-expense-table>
-        </div>
-        
-      </div>
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-sm-4">
+      <app-expense-form (expenseEvent)="handleExpense($event)"></app-expense-form>
     </div>
+    <div class="col-sm-8">
+      <div class="row mb-2">
+        <div class="col fw-bolder">
+          Expenses
+        </div>
+        <div class="col fw-bolder">
+          Notes
+        </div>
+        <div class="col fw-bolder">
+          Cost
+        </div>
+      </div>
+      <app-expense-table *ngFor="let e of expenses" [expense]="e"></app-expense-table>
+    </div>
+
+  </div>
+</div>
+
 
 
 
