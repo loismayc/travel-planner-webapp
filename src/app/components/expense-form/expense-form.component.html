@@ -1,19 +1,19 @@
-<div class="card" style="width: 20rem;">
-  <div class="card-body">
-    <h5 class="card-title">Item</h5>
-    <input type="text" class="form-control" [(ngModel)]="myExpense.name"/>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Cost</h5>
-    <div class="input-group mb-3">
-      <span class="input-group-text">₱</span>
-      <input type="number" class="form-control" [(ngModel)]="myExpense.cost">
-      <span class="input-group-text">.00</span>
+
+    <div class="card-body">
+      <h5 class="card-title">Item</h5>
+      <input type="text" class="form-control" [(ngModel)]="myExpense.name" />
     </div>
-    <div class="input-group">
-      <span class="input-group-text">Notes</span>
-      <textarea class="form-control" [(ngModel)]="myExpense.note"></textarea>
+    <div class="card-body">
+      <h5 class="card-title">Cost</h5>
+      <div class="input-group mb-3">
+        <span class="input-group-text">₱</span>
+        <input type="number" class="form-control" [(ngModel)]="myExpense.cost">
+        <span class="input-group-text">.00</span>
+      </div>
+      <div class="input-group">
+        <span class="input-group-text">Notes</span>
+        <textarea class="form-control" [(ngModel)]="myExpense.note"></textarea>
+      </div> <button class="btn btn-primary mt-3" (click)="addButton()">Add Expense</button>
     </div>
-  </div>
-  <button class="btn btn-primary" (click)="addButton()">Add Expense</button>
-</div>
+   
+

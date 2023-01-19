@@ -13,6 +13,8 @@
   </div>
 
     <div class="col-sm-4">
-      <app-travel-form></app-travel-form>
+      <app-travel-form (destinationEvent)="handleDestination($event)"></app-travel-form>
     </div>
   </div>
+
+<app-travel-list *ngFor="let list of destinations" [destination]="list"></app-travel-list>

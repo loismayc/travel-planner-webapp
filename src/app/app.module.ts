@@ -13,6 +13,7 @@ import { HeaderComponent } from "./components/sections/header/header.component";
 import { FooterComponent } from "./components/sections/footer/footer.component";
 import { TravelListComponent } from "./components/travel-list/travel-list.component";
 import { TravelOverviewComponent } from "./components/travel-overview/travel-overview.component";
+import { CategorySelectComponent } from './components/category-select/category-select.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import { TravelOverviewComponent } from "./components/travel-overview/travel-ove
         TravelFormComponent,
         TravelListComponent,
         TravelOverviewComponent,
+        CategorySelectComponent,
     ],
     imports: [
         BrowserModule,

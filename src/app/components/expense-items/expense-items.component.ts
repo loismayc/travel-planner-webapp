@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { Categories } from "../../models/categories";
 import { ExpenseItems } from "../../models/expense-item";
 import { TotalExpenseService } from "../../services/total-expense.service";
 
@@ -9,31 +8,19 @@ import { TotalExpenseService } from "../../services/total-expense.service";
     styleUrls: ["./expense-items.component.scss"],
 })
 export class ExpenseItemsComponent {
-    categories: Categories[] = [
-        {
-            id: 1,
-            title: "Travel",
-        },
-        {
-            id: 2,
-            title: "Bills",
-        },
-        {
-            id: 3,
-            title: "Health",
-        },
-        {
-            id: 4,
-            title: "Concert",
-        },
-    ];
     expenses: ExpenseItems[] = [];
     totalExpenses = 0.0;
+    categoryId: number;
+
+    setCategoryId = (payload: any) => {
+        this.categoryId = payload.id;
+    };
 
     constructor(private totalExpenseService: TotalExpenseService) {}
 
     handleExpense = (payload: ExpenseItems) => {
         console.log(payload);
+        payload.category_id = this.categoryId;
         this.expenses.push(payload);
 
         this.totalExpenses = this.totalExpenseService.computeTotalExpenses(

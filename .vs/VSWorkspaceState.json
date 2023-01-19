@@ -4,12 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\budget-form",
-    "\\src\\app\\components\\budget-table",
     "\\src\\app\\components\\expense-form",
     "\\src\\app\\components\\expense-items",
     "\\src\\app\\components\\expense-table",
-    "\\src\\app\\models"
+    "\\src\\app\\components\\travel-form",
+    "\\src\\app\\components\\travel-list",
+    "\\src\\app\\components\\travel-overview"
   ],
+  "SelectedNode": "\\src\\app\\components\\travel-list\\travel-list.component.html",
   "PreviewInSolutionExplorer": false
 }

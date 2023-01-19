@@ -12,6 +12,7 @@ export class ExpenseFormComponent {
         cost: 0,
         name: "",
         note: "",
+        destination_id: 0,
         category_id: 0,
     };
 
