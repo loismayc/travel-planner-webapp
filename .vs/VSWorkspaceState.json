@@ -3,14 +3,13 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\budget",
-    "\\src\\app\\budget\\budget-items",
-    "\\src\\app\\budget\\budget-table",
-    "\\src\\app\\expense",
-    "\\src\\app\\expense\\expense-items",
-    "\\src\\app\\expense\\expense-table",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\budget-form",
+    "\\src\\app\\components\\budget-table",
+    "\\src\\app\\components\\expense-form",
+    "\\src\\app\\components\\expense-items",
+    "\\src\\app\\components\\expense-table",
     "\\src\\app\\models"
   ],
-  "SelectedNode": "\\src\\app\\expense\\expense-items\\expense-items.component.html",
   "PreviewInSolutionExplorer": false
 }

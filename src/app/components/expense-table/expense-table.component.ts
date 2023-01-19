@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { ExpenseItem } from "../../models/expense-item";
+import { ExpenseItems } from "../../models/expense-item";
 
 @Component({
     selector: "app-expense-table",
@@ -7,5 +7,5 @@ import { ExpenseItem } from "../../models/expense-item";
     styleUrls: ["./expense-table.component.scss"],
 })
 export class ExpenseTableComponent {
-    @Input() expenses: ExpenseItem;
+    @Input() expense: ExpenseItems;
 }

@@ -1,7 +1,5 @@
 import { Component } from "@angular/core";
 import { BudgetItems } from "../../models/budget-items";
-//import { Budget } from "../../models/budget-input";
-//import { BudgetItems } from "../../models/budget-items";
 
 @Component({
     selector: "app-budget-items",
