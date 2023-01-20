@@ -9,6 +9,7 @@ import { DestinationItems } from "../../models/destination-items";
 export class TravelFormComponent {
     @Input() myDestination: DestinationItems = {
         id: 0,
+        name: "",
         start_date: "",
         end_date: "",
         days: 0,

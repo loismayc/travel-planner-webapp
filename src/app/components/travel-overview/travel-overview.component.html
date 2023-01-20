@@ -5,10 +5,10 @@
     <h4 class="card-title">Number of Planned Trips:</h4>
     <h5 class="mb-4">12 </h5>
 
-    <h4 class="card-title">Overall Expenses</h4>
-    <h5 class="mb-4">₱ </h5>
+    <h4 class="card-title">Overall Budget</h4>
+    <h5 class="mb-4">{{totalBudget}} </h5>
 
-    <h4 class="card-title">Remaining Funds</h4>
+    <h4 class="card-title">Overall Expenses</h4>
     <h5 class="mb-4">₱ </h5>
   </div>
 
@@ -17,4 +17,7 @@
     </div>
   </div>
 
-<app-travel-list *ngFor="let list of destinations" [destination]="list"></app-travel-list>
+<div class="row row-cols-1 row-cols-md-3 g-4 pt-5">
+
+  <app-travel-list *ngFor="let list of destinations" [destination]="list"></app-travel-list>
+</div>
