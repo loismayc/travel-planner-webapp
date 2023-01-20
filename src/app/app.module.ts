@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
-//import { RouterModule } from "@angular/router";
+import { RouterModule } from "@angular/router";
 
 import { AppComponent } from "./app.component";
 
@@ -33,9 +33,9 @@ import { CategorySelectComponent } from "./components/category-select/category-s
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        // RouterModule.forRoot([
-        //      { path: "expense-items", component: ExpenseItemsComponent },
-        //   ]),
+        RouterModule.forRoot([
+            { path: "expense-items/:id", component: ExpenseItemsComponent },
+        ]),
     ],
     providers: [],
     bootstrap: [AppComponent],

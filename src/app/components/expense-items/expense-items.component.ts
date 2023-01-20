@@ -8,6 +8,8 @@ import { TotalExpenseService } from "../../services/total-expense.service";
     styleUrls: ["./expense-items.component.scss"],
 })
 export class ExpenseItemsComponent {
+    id: number;
+
     expenses: ExpenseItems[] = [];
     totalExpenses = 0.0;
     categoryId: number;

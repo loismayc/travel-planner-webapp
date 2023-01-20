@@ -1,13 +1,20 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
 import { ExpenseItems } from "../models/expense-item";
+
+const httpOptions = {
+    headers: new HttpHeaders({
+        "Content-Type": "application/json",
+    }),
+};
 
 @Injectable({
     providedIn: "root",
 })
 export class TotalExpenseService {
-    constructor() {
+    baseUrl = "http://localhost:5000";
+
+    constructor(private http: HttpClient) {
         console.log("constructor");
     }
 
@@ -20,14 +27,4 @@ export class TotalExpenseService {
 
         return total;
     };
-
-    /* baseUrl: string = "http://localhost:5000"
-
-  constructor(private http: HttpClient) { }
-  getAll = (): Observable<ExpenseItems[]> => {
-    let items: Observable<ExpenseItems[]>
-
-    items = this.http.get<ExpenseItems[]>(`${this.baseUrl}/expenses`)
-    return items
-  }*/
 }

@@ -24,28 +24,36 @@
       "cost": 3500.00,
       "name": "Accomodation",
       "note": "",
-      "category_id": 1
+      "category_id": 1,
+      "destination_id": 1
+
     },
     {
       "id": 2,
       "cost": 6000.00,
       "name": "Plane ticket",
       "note": "Roundtrip fare",
-      "category_id": 1
+      "category_id": 1,
+      "destination_id": 1
+
     },
     {
       "id": 3,
       "cost": 8000.00,
       "name": "Food",
       "note": "",
-      "category_id": 1
+      "category_id": 1,
+      "destination_id": 2
+
     },
     {
       "id": 4,
       "cost": 2500.00,
       "name": "Electric Bill",
       "note": "one month payment",
-      "category_id": 2
+      "category_id": 2,
+      "destination_id": 3
+
     }
   ],
 
