@@ -49,33 +49,36 @@
     }
   ],
 
-  "budget": [
+  "destination": [
     {
       "id": 1,
-      "amount": 20000.00,
-      "remaining": 2000.00,
-      "category": "Travel"
+      "name": "Thailand",
+      "start_date": "January 23, 2023",
+      "end_date": "January 30, 2023",
+      "days": 10,
+      "budget": 20000,
+      "expense": 15400,
+      "fund": 1010
     },
     {
       "id": 2,
-      "amount": 5000.00,
-      "remaining": 10.00,
-      "category": "Bills"
-
+      "name": "Batanes",
+      "start_date": "February 12, 2023",
+      "end_date": "February 22, 2023",
+      "days": 10,
+      "budget": 20000,
+      "expense": 15400,
+      "fund": 1010
     },
     {
       "id": 3,
-      "amount": 2000.00,
-      "remaining": 150.00,
-      "category": "Health"
-
-    },
-    {
-      "id": 4,
-      "amount": 500.00,
-      "remaining": 100.00,
-      "category": "Concert"
-
+      "name": "Cebu",
+      "start_date": "01-16-2023",
+      "end_date": "01-26-2023",
+      "days": 10,
+      "budget": 20000,
+      "expense": 15400,
+      "fund": 1010
     }
   ]
 }
