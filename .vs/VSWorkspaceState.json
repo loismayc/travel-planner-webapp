@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\mock",
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\expense-table",
+    "\\src\\app\\components\\expense-items",
     "\\src\\app\\components\\travel-form",
     "\\src\\app\\components\\travel-list",
     "\\src\\app\\components\\travel-overview",
-    "\\src\\app\\models",
     "\\src\\app\\services"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\src\\app\\components\\travel-overview\\travel-overview.component.ts",
   "PreviewInSolutionExplorer": false
 }
