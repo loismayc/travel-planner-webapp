@@ -14,17 +14,25 @@ const httpOptions = {
 })
 export class TripsService {
     baseUrl = "http://localhost:5000";
+    private apiUrl = "http://localhost:5137/travel_items";
 
     constructor(private http: HttpClient) {}
 
+    // getTrips = (): Observable<DestinationItems[]> => {
+    //     let items: Observable<DestinationItems[]>;
+
+    //     items = this.http.get<DestinationItems[]>(
+    //         `${this.baseUrl}/destination`,
+    //         httpOptions
+    //     );
+
+    //     return items;
+    // };
+
+    
     getTrips = (): Observable<DestinationItems[]> => {
-        let items: Observable<DestinationItems[]>;
-
-        items = this.http.get<DestinationItems[]>(
-            `${this.baseUrl}/destination`,
-            httpOptions
-        );
-
-        return items;
+        return this.http.get<DestinationItems[]>(this.apiUrl);
     };
+
+  
 }

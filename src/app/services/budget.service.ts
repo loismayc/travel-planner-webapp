@@ -4,7 +4,7 @@ import { DestinationItems } from "../models/destination-items";
 @Injectable({
     providedIn: "root",
 })
-export class TotalBudgetService {
+export class BudgetService {
     constructor() {
         console.log("constructor");
     }

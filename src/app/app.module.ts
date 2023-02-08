@@ -34,6 +34,7 @@ import { CategorySelectComponent } from "./components/category-select/category-s
         FormsModule,
         HttpClientModule,
         RouterModule.forRoot([
+            { path: '', component: TravelOverviewComponent },
             { path: "expense-items/:id", component: ExpenseItemsComponent },
         ]),
     ],

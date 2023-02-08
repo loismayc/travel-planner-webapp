@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { ExpenseService } from "src/app/services/expense.service";
 import { ExpenseItems } from "../../models/expense-item";
 
 @Component({
@@ -7,6 +8,11 @@ import { ExpenseItems } from "../../models/expense-item";
     styleUrls: ["./expense-form.component.scss"],
 })
 export class ExpenseFormComponent {
+
+    constructor(
+        private expenseItemsService : ExpenseService
+      ) {
+      }
     @Input() myExpense: ExpenseItems = {
         id: 0,
         cost: 0,
@@ -23,6 +29,11 @@ export class ExpenseFormComponent {
         console.log("Expense added!");
 
         const e = { ...this.myExpense };
-        this.expenseEvent.emit(e);
-    };
+    
+        this.expenseItemsService.save(e).subscribe((savedExpenseItem) => {
+            console.log(savedExpenseItem)
+            this.expenseEvent.emit(savedExpenseItem)
+          })
+        };
 }
+

@@ -9,13 +9,11 @@ import { DestinationItems } from "../../models/destination-items";
 export class TravelFormComponent {
     @Input() myDestination: DestinationItems = {
         id: 0,
-        name: "",
-        start_date: "",
-        end_date: "",
+        destination: "",
+        startDate: "",
+        endDate: "",
         days: 0,
         budget: 0,
-        expense: 0,
-        fund: 0,
     };
 
     @Output() destinationEvent: EventEmitter<DestinationItems> =

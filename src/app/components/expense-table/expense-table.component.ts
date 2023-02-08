@@ -6,6 +6,9 @@ import { ExpenseItems } from "../../models/expense-item";
     templateUrl: "./expense-table.component.html",
     styleUrls: ["./expense-table.component.scss"],
 })
-export class ExpenseTableComponent {
+export class ExpenseTableComponent{
+   
     @Input() expense: ExpenseItems;
+
+
 }

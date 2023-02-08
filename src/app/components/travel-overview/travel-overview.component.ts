@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { DestinationItems } from "../../models/destination-items";
-import { TotalBudgetService } from "../../services/total-budget.service";
+import { BudgetService } from "../../services/budget.service";
 import { TripsService } from "../../services/trips.service";
 
 @Component({
@@ -13,7 +13,7 @@ export class TravelOverviewComponent implements OnInit {
     totalBudget = 0.0;
 
     constructor(
-        private totalBudgetService: TotalBudgetService,
+        private totalBudgetService: BudgetService,
         private tripService: TripsService
     ) {}
 
