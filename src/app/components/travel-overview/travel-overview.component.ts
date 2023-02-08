@@ -20,9 +20,17 @@ export class TravelOverviewComponent implements OnInit {
     ngOnInit(): void {
         console.log("ngOnInit() fired");
 
+    
         this.tripService.getTrips().subscribe((destinations) => {
             this.destinations = destinations;
+            console.log(this.destinations);
+
+            this.destinations.forEach((destination) => {
+                destination.days = this.tripService.computeDays([destination]);
+              });
         });
+        
+       
     }
 
     handleDestination = (payload: DestinationItems) => {
@@ -33,4 +41,6 @@ export class TravelOverviewComponent implements OnInit {
             this.destinations
         );
     };
+
+
 }

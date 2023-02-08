@@ -14,8 +14,6 @@ export class ExpenseItemsComponent implements OnInit {
     expenses: ExpenseItems[] = [];
     expenseItem: ExpenseItems;
 
-
-
     totalExpenses = 0.0;
     categoryId: number;
 
@@ -43,6 +41,10 @@ export class ExpenseItemsComponent implements OnInit {
         this.totalExpenseService.getById(this.id).subscribe((item) => {
           this.expenseItem = item
         })
+
+        this.totalExpenseService.getExpenses().subscribe((expenses) => {
+            this.expenses = expenses;
+        });
       }
 
 }

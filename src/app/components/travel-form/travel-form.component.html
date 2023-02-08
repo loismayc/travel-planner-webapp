@@ -3,22 +3,22 @@
     <h3 class="form-label">Plan a destination</h3>
     <div class="col">
       <label class="form-label">Destination</label>
-      <input type="text" class="form-control" placeholder="Enter destination" [(ngModel)]="myDestination.destination" name="something">
+      <input type="text" class="form-control" placeholder="Enter destination" [(ngModel)]="myDestination.destination" name="destination">
     </div>
     <div class="row g-2">
       <div class="col">
         <label class="form-label">Departure Date</label>
-        <input type="date" class="form-control" placeholder="Departure" [(ngModel)]="myDestination.startDate"  name="something" >
+        <input type="date" class="form-control" placeholder="Departure" [(ngModel)]="myDestination.startDate"  name="startDate" >
       </div>
       <div class="col">
         <label class="form-label">Arrival Date</label>
-        <input type="date" class="form-control" placeholder="Arrival" [(ngModel)]="myDestination.endDate"  name="something1">
+        <input type="date" class="form-control" placeholder="Arrival" [(ngModel)]="myDestination.endDate"  name="endDate">
       </div>
     </div>
     <div class="input-group mb-3">
       <label class="form-label mx-3">Total Budget</label>
       <span class="input-group-text ">₱</span>
-      <input type="number" class="form-control" [(ngModel)]="myDestination.budget"  name="something2">
+      <input type="number" class="form-control" [(ngModel)]="myDestination.budget"  name="budget">
     </div>
     <div>
       <button type="submit" class="btn btn-primary" (click)="addDestination()">Add Destination</button>

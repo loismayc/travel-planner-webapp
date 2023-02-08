@@ -62,13 +62,13 @@ export class ExpenseService {
     
         if(expenseItem.id) {
           // Perform Update: PUT /expenses/:id
-          const url = `${this.baseUrl}/expenses/${expenseItem.id}`
+          const url = `${this.apiUrl}/${expenseItem.id}`
     
           item = this.http.put<ExpenseItems>(url, expenseItem, httpOptions)
         } else {
           // Perform Create: POST /expenses
           
-          item = this.http.post<ExpenseItems>(`${this.baseUrl}/expenses`, expenseItem, httpOptions)
+          item = this.http.post<ExpenseItems>(this.apiUrl, expenseItem, httpOptions)
         }
     
         return item

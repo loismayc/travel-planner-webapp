@@ -15,6 +15,7 @@ import { FooterComponent } from "./components/sections/footer/footer.component";
 import { TravelListComponent } from "./components/travel-list/travel-list.component";
 import { TravelOverviewComponent } from "./components/travel-overview/travel-overview.component";
 import { CategorySelectComponent } from "./components/category-select/category-select.component";
+import { TravelItemModalComponent } from './components/travel-item-modal/travel-item-modal.component';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { CategorySelectComponent } from "./components/category-select/category-s
         TravelListComponent,
         TravelOverviewComponent,
         CategorySelectComponent,
+        TravelItemModalComponent,
     ],
     imports: [
         BrowserModule,

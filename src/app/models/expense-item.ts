@@ -3,6 +3,6 @@ export interface ExpenseItems {
     cost: number;
     name: string;
     note: string;
-    destination_id: number;
+    travelItemId: number;
     category_id: number;
 }

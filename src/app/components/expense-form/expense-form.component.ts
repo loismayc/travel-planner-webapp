@@ -14,11 +14,10 @@ export class ExpenseFormComponent {
       ) {
       }
     @Input() myExpense: ExpenseItems = {
-        id: 0,
         cost: 0,
         name: "",
         note: "",
-        destination_id: 0,
+        travelItemId: 0,
         category_id: 0,
     };
 
