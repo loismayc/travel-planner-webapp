@@ -5,4 +5,6 @@ export interface DestinationItems {
     endDate: Date;
     days: number;
     budget: number;
+    expenses: number;
+
 }

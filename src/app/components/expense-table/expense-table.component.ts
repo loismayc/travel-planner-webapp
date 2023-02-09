@@ -1,4 +1,5 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Categories } from "src/app/models/categories";
 import { ExpenseItems } from "../../models/expense-item";
 
 @Component({
@@ -9,6 +10,8 @@ import { ExpenseItems } from "../../models/expense-item";
 export class ExpenseTableComponent{
    
     @Input() expense: ExpenseItems;
+    @Input() category: Categories;
+
 
 
 }

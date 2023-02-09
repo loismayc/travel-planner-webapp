@@ -13,23 +13,23 @@ export class CategorySelectComponent {
     categories: Categories[] = [
         {
             id: 1,
-            title: "Transportation",
+            categoryName: "Transportation",
         },
         {
             id: 2,
-            title: "Accomodation",
+            categoryName: "Accomodation",
         },
         {
             id: 3,
-            title: "Food",
+            categoryName: "Food",
         },
         {
             id: 4,
-            title: "Activities",
+            categoryName: "Activities",
         },
         {
             id: 5,
-            title: "Miscellaneous",
+            categoryName: "Miscellaneous",
         },
     ];
 

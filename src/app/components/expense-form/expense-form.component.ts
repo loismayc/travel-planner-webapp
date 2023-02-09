@@ -18,11 +18,10 @@ export class ExpenseFormComponent {
         name: "",
         note: "",
         travelItemId: 0,
-        category_id: 0,
+        categoryId: 0,
     };
 
-    @Output() expenseEvent: EventEmitter<ExpenseItems> =
-        new EventEmitter<ExpenseItems>();
+    @Output() expenseEvent: EventEmitter<ExpenseItems> = new EventEmitter<ExpenseItems>();
 
     addButton = () => {
         console.log("Expense added!");

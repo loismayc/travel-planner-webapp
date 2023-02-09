@@ -2,9 +2,8 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from "./app.component";
-
 import { FormsModule } from "@angular/forms";
 import { ExpenseItemsComponent } from "./components/expense-items/expense-items.component";
 import { ExpenseTableComponent } from "./components/expense-table/expense-table.component";
@@ -35,6 +34,7 @@ import { TravelItemModalComponent } from './components/travel-item-modal/travel-
         BrowserModule,
         FormsModule,
         HttpClientModule,
+        NgbModule,
         RouterModule.forRoot([
             { path: '', component: TravelOverviewComponent },
             { path: "expense-items/:id", component: ExpenseItemsComponent },

@@ -7,13 +7,13 @@
           <p class="card-text">Planned dates: {{myDestination.startDate | date}} to {{myDestination.endDate | date}}</p>
           <p class="card-text">Total # of days: {{myDestination.days}} </p>
           <p class="card-text">Total Budget: {{myDestination.budget}}</p>
-          <p class="card-text">Total Expenses: ()</p>
+          <p class="card-text">Total Expenses: {{myDestination.expenses}}</p>
         </div>
         <div class="dropdown ms-auto p-1">
           <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" routerLink="/expense-items/{{myDestination.id}}">Add Expenses</a></li>
-            <li><a class="dropdown-item" href="#">Edit Destination</a></li>
+            <li><a class="dropdown-item" href="#" (click)="open()">Edit Destination</a></li>
             <li><a class="dropdown-item" href="#" (click)="deleteItem(myDestination)">Delete Destination</a></li>
           </ul>
         </div>

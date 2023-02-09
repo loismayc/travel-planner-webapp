@@ -4,5 +4,5 @@ export interface ExpenseItems {
     name: string;
     note: string;
     travelItemId: number;
-    category_id: number;
+    categoryId: number;
 }
