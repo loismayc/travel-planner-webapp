@@ -7,7 +7,7 @@ import { ExpenseItems } from "../../models/expense-item";
     templateUrl: "./expense-form.component.html",
     styleUrls: ["./expense-form.component.scss"],
 })
-export class ExpenseFormComponent {
+export class ExpenseFormComponent{
 
     constructor(
         private expenseItemsService : ExpenseService
@@ -24,14 +24,18 @@ export class ExpenseFormComponent {
     @Output() expenseEvent: EventEmitter<ExpenseItems> = new EventEmitter<ExpenseItems>();
 
     addButton = () => {
-        console.log("Expense added!");
-
         const e = { ...this.myExpense };
     
         this.expenseItemsService.save(e).subscribe((savedExpenseItem) => {
             console.log(savedExpenseItem)
+       
             this.expenseEvent.emit(savedExpenseItem)
           })
+          // this.expenseItemsService.getById(this.myExpense.travelItemId).subscribe((item) => {
+          //   this.myExpense = item
+          // })
+          console.log("Expense added!");
         };
+
 }
 

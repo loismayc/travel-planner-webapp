@@ -37,7 +37,7 @@ import { TravelItemModalComponent } from './components/travel-item-modal/travel-
         NgbModule,
         RouterModule.forRoot([
             { path: '', component: TravelOverviewComponent },
-            { path: "expense-items/:id", component: ExpenseItemsComponent },
+            { path: "travel-items/:id", component: ExpenseItemsComponent },
         ]),
     ],
     providers: [],

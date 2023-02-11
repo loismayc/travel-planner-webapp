@@ -16,7 +16,7 @@ const httpOptions = {
 export class ExpenseService {
     baseUrl = "http://localhost:5000";
     private apiUrl = "http://localhost:5137/expense_items";
-    private apiUrlCategories = "http://localhost:5137/categories";
+    // private apiUrlCategories = "http://localhost:5137/categories";
 
 
     constructor(private http: HttpClient) {
@@ -27,15 +27,11 @@ export class ExpenseService {
         return this.http.get<ExpenseItems[]>(this.apiUrl);
     };
 
-    // getCateg = (): Observable<Categories[]> => {
-    //     return this.http.get<Categories[]>(this.apiUrlCategories);
-    // };
-
     computeTotalExpenses = (expenseItems: ExpenseItems[]): number => {
         let total = 0.0;
 
         expenseItems.forEach((expenseItem: ExpenseItems) => {
-            total = total + expenseItem.cost;
+            total += expenseItem.cost;
         });
 
         return total;
@@ -46,17 +42,6 @@ export class ExpenseService {
 
         item = this.http.get<ExpenseItems>(
             `${this.apiUrl}/${id}`,
-            httpOptions
-        );
-
-        return item;
-    };
-
-    getCategory = (id: number): Observable<Categories> => {
-        let item: Observable<Categories>;
-
-        item = this.http.get<Categories>(
-            `${this.apiUrlCategories}/${id}`,
             httpOptions
         );
 
@@ -79,4 +64,5 @@ export class ExpenseService {
     
         return item
       }
+
 }

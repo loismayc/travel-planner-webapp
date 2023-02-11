@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ExpenseItems } from "src/app/models/expense-item";
 import { DestinationItems } from "../../models/destination-items";
 import { BudgetService } from "../../services/budget.service";
 import { TripsService } from "../../services/trips.service";
@@ -36,6 +37,7 @@ export class TravelOverviewComponent implements OnInit {
     handleDestination = (payload: DestinationItems) => {
         console.log(payload);
         this.destinations.push(payload);
+        
 
         this.totalBudget = this.totalBudgetService.computeTotalBudget(
             this.destinations

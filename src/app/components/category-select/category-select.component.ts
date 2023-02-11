@@ -1,4 +1,6 @@
-import { Component, Output, EventEmitter } from "@angular/core";
+import { Component, Output, EventEmitter, OnInit } from "@angular/core";
+import { ExpenseItems } from "src/app/models/expense-item";
+import { CategoryService } from "src/app/services/category.service";
 import { Categories } from "../../models/categories";
 
 @Component({
@@ -6,35 +8,29 @@ import { Categories } from "../../models/categories";
     templateUrl: "./category-select.component.html",
     styleUrls: ["./category-select.component.scss"],
 })
-export class CategorySelectComponent {
+export class CategorySelectComponent implements OnInit{
     @Output() categorySelectedEvent: EventEmitter<any> =
         new EventEmitter<any>();
 
-    categories: Categories[] = [
-        {
-            id: 1,
-            categoryName: "Transportation",
-        },
-        {
-            id: 2,
-            categoryName: "Accomodation",
-        },
-        {
-            id: 3,
-            categoryName: "Food",
-        },
-        {
-            id: 4,
-            categoryName: "Activities",
-        },
-        {
-            id: 5,
-            categoryName: "Miscellaneous",
-        },
-    ];
+    expense: ExpenseItems;
+
+    categories: Categories[] = [];
+
+    constructor( 
+        
+        private categoryService: CategoryService
+        ) {}
 
     selectHandler = (payload: any) => {
         const category_id = payload.target.value;
         this.categorySelectedEvent.emit({ id: category_id });
     };
+
+    ngOnInit(): void {
+        this.categoryService.getAll().subscribe((category) => {
+            this.categories = category;
+            console.log("All Categories" , category);
+   
+        });
+    }
 }

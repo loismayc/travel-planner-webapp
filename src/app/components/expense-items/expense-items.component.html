@@ -1,27 +1,23 @@
 <div class="container mt-3 mb-3">
   <h3>Total Expenses</h3>
   <h5>{{totalExpenses}}</h5>
-
-
-
 </div>
 
 <div class="container mt-5 mb-5">
   <div class="row">
     <div class="col-sm-4">
       <div class="card" style="width: 20rem;">
-
         <div class="card-body">
           <h5 class="card-title">Category</h5>
           <app-category-select (categorySelectedEvent)="setCategoryId($event)"></app-category-select>
         </div>
-        <app-expense-form (expenseEvent)="handleExpense($event)"></app-expense-form>
+        <app-expense-form ></app-expense-form>
       </div>
     </div>
       <div class="col-sm-8">
         <div class="row mb-2">
           <div class="col fw-bolder">
-            Category
+            Category 
           </div>
           <div class="col fw-bolder">
             Expense Items
@@ -34,7 +30,9 @@
           </div>
         </div>
       
-        <app-expense-table *ngFor="let e of expenses" [expense]="e" ></app-expense-table>
+        <ng-container *ngFor="let expense of expenses">
+          <app-expense-table [expense]="expense"></app-expense-table>
+        </ng-container>
       </div>
 
     </div>

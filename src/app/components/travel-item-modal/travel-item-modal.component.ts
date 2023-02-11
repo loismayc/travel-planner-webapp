@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DestinationItems } from 'src/app/models/destination-items';
+import { TripsService } from 'src/app/services/trips.service';
 
 
 @Component({
@@ -7,5 +10,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./travel-item-modal.component.scss']
 })
 export class TravelItemModalComponent {
+  id: number;
 
+ @Input() destination: DestinationItems;
+
+ 
 }
+

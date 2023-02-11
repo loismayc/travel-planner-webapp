@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Categories } from "src/app/models/categories";
+import { CategoryService } from "src/app/services/category.service";
 import { ExpenseItems } from "../../models/expense-item";
 
 @Component({
@@ -7,11 +8,27 @@ import { ExpenseItems } from "../../models/expense-item";
     templateUrl: "./expense-table.component.html",
     styleUrls: ["./expense-table.component.scss"],
 })
-export class ExpenseTableComponent{
+export class ExpenseTableComponent implements OnInit{
+
+    categories: Categories[] = [];
+
    
     @Input() expense: ExpenseItems;
-    @Input() category: Categories;
 
+    getCategoryName(categoryId: number) {
+        return this.categories.find(category => category.id === categoryId)?.categoryName;
+      }
 
+      constructor(
+        private categoryService: CategoryService
+        ) {}
 
+        ngOnInit(): void {
+         
+            this.categoryService.getAll().subscribe(categories => {
+                this.categories = categories;
+              });
+    
+          }
+ 
 }

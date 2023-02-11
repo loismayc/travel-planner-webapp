@@ -21,6 +21,17 @@ export class TripsService {
         return this.http.get<DestinationItems[]>(this.apiUrl);
     };
 
+    getById = (id: number): Observable<DestinationItems> => {
+        let item: Observable<DestinationItems>;
+
+        item = this.http.get<DestinationItems>(
+            `${this.apiUrl}/${id}`,
+            httpOptions
+        );
+
+        return item;
+    };
+
     save = (travelItem : DestinationItems) : Observable<DestinationItems> => {
         let item : Observable<DestinationItems>
         if (!travelItem.id){
