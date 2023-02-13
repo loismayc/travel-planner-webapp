@@ -9,24 +9,23 @@ import { DestinationItems } from "../../models/destination-items";
     templateUrl: "./travel-list.component.html",
     styleUrls: ["./travel-list.component.scss"],
 })
-export class TravelListComponent implements OnInit{
+export class TravelListComponent implements OnInit {
     destinationExpenses: { [id: string]: number } = {};
-    
-    destinations: DestinationItems[]= [];
+    destinations: DestinationItems[] = [];
     expense: ExpenseItems;
-    totalExpense = 0.0
+    totalExpense = 0.0;
     id: number;
 
     @Input() trips: DestinationItems;
     @Input() expenses: ExpenseItems[];
 
     @Output() deleteEvent: EventEmitter<DestinationItems> =
-    new EventEmitter<DestinationItems>();
- 
+        new EventEmitter<DestinationItems>();
+
     constructor(
         private tripService: TripsService,
         private expenseService: ExpenseService
-        ) {}
+    ) {}
 
     ngOnInit(): void {
         this.tripService.getTrips().subscribe((destinations) => {
@@ -36,23 +35,27 @@ export class TravelListComponent implements OnInit{
             this.destinations.forEach((destination: DestinationItems) => {
                 this.expenseService.getExpenses().subscribe((expenses) => {
                     // Filter expenses for the current destination
-                    let filteredExpenses = expenses.filter((expense) => expense.travelItemId === destination.id);
+                    const filteredExpenses = expenses.filter(
+                        (expense) => expense.travelItemId === destination.id
+                    );
                     // Calculate total expenses for the current destination
-                    let totalExpense = this.expenseService.computeTotalExpenses(filteredExpenses);
-                      this.destinationExpenses[destination.id] = totalExpense;
+                    const totalExpense =
+                        this.expenseService.computeTotalExpenses(
+                            filteredExpenses
+                        );
+                    this.destinationExpenses[destination.id] = totalExpense;
                 });
             });
-        });  
+        });
     }
-   
+
     deleteItem = (trip: DestinationItems) => {
-        let t = {...trip};
+        const t = { ...trip };
 
         this.tripService.delete(t).subscribe((savedItem) => {
             this.deleteEvent.emit(savedItem);
-        })
-    
+        });
+
         console.log("Item deleted");
-    }
-    
+    };
 }

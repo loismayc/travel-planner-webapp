@@ -4,9 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\category-select",
-    "\\src\\app\\components\\edit-travel-item"
+    "\\src\\app\\components\\expense-items",
+    "\\src\\app\\components\\expense-table",
+    "\\src\\app\\components\\travel-form",
+    "\\src\\app\\components\\travel-list",
+    "\\src\\app\\components\\travel-overview",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\components\\edit-travel-item\\edit-travel-item.component.ts",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

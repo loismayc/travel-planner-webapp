@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ExpenseItems } from "src/app/models/expense-item";
 import { ExpenseService } from "src/app/services/expense.service";
 import { DestinationItems } from "../../models/destination-items";
@@ -14,10 +14,10 @@ export class TravelOverviewComponent implements OnInit {
     id: number;
     destinationExpenses: { [id: string]: number } = {};
     destinations: DestinationItems[] = [];
-    expenses: ExpenseItems[]=[];
+    expenses: ExpenseItems[] = [];
     totalBudget = 0.0;
     totalExpense = 0.0;
- 
+
     constructor(
         private totalBudgetService: BudgetService,
         private tripService: TripsService,
@@ -33,19 +33,19 @@ export class TravelOverviewComponent implements OnInit {
 
             this.destinations.forEach((destination) => {
                 destination.days = this.tripService.computeDays([destination]);
-              });
-            
-              this.totalBudget = this.totalBudgetService.computeTotalBudget(
+            });
+
+            this.totalBudget = this.totalBudgetService.computeTotalBudget(
                 this.destinations
             );
-        });      
-        this.expenseService.getExpenses().subscribe((expenses) => {  
-            this.expenses = expenses
-            console.log("expenses",expenses);    
+        });
+        this.expenseService.getExpenses().subscribe((expenses) => {
+            this.expenses = expenses;
+            console.log("expenses", expenses);
             this.totalExpense = this.expenseService.computeTotalExpenses(
                 this.expenses
-            )});
-        
+            );
+        });
     }
 
     handleDestination = (payload: DestinationItems) => {
@@ -55,7 +55,5 @@ export class TravelOverviewComponent implements OnInit {
 
     get totalRows(): number {
         return this.destinations.length;
-      }
-   
+    }
 }
-

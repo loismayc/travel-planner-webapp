@@ -8,11 +8,4 @@ import { ExpenseItems } from "./models/expense-item";
 })
 export class AppComponent {
     title = "budget-log-webapp";
-
-    expense: ExpenseItems;
-    totalExpense: number;
-
-    displayExpense(totalExpense: number) {
-        this.totalExpense = totalExpense;
-    }
 }

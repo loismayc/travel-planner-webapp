@@ -7,31 +7,28 @@ import { DestinationItems } from "../../models/destination-items";
     templateUrl: "./travel-form.component.html",
     styleUrls: ["./travel-form.component.scss"],
 })
-export class TravelFormComponent implements OnInit{
-
+export class TravelFormComponent implements OnInit {
     @Input() myDestination: DestinationItems = {
-        id:0,
+        id: 0,
         destination: "",
-        startDate:"",
+        startDate: "",
         endDate: "",
         days: 0,
         budget: 0,
         expenses: 0,
-    }
+    };
 
     @Output() addDestinationEvent: EventEmitter<DestinationItems> =
         new EventEmitter<DestinationItems>();
-    
-    constructor(private tripsService : TripsService, ) { }
-    ngOnInit(): void {
-        
-    }
+
+    constructor(private tripsService: TripsService) {}
+    ngOnInit(): void {}
 
     addDestination = () => {
-    const e = { ...this.myDestination };
+        const e = { ...this.myDestination };
         this.tripsService.save(e).subscribe((savedTravelItem) => {
             this.addDestinationEvent.emit(savedTravelItem);
             console.log("Trip added!");
-          })
+        });
     };
 }
