@@ -1,0 +1,32 @@
+<button type="button" class="btn btn-primary btn-sm" (click)="goBack()"> < Back</button>
+<div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Edit Destination</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body mx-3">
+      <div class="col" *ngIf="!isLoading">
+        <label class="form-label">Destination</label>
+        <input type="text" class="form-control" placeholder="Enter destination"  name="destination" [(ngModel)]="trips.destination" >
+      </div>
+      <div class="row g-2">
+        <div class="p-2 col" *ngIf="!isLoading">
+          <label class="form-label">Start Date</label>
+          <input type="date" class="form-control" placeholder="Departure"  name="startDate" [(ngModel)]="trips.startDate" >
+        </div>
+        <div class="p-2 col" *ngIf="!isLoading">
+          <label class="form-label">End Date</label>
+          <input type="date" class="form-control" placeholder="Arrival" name="endDate" [(ngModel)]="trips.endDate" >
+        </div>
+      </div>
+      <div class="input-group mb-3 p-2" *ngIf="!isLoading">
+        <label class="form-label mx-3">Total Budget</label>
+        <span class="input-group-text ">₱</span>
+        <input type="number" class="form-control" name="budget" [(ngModel)]="trips.budget">
+      </div>
+
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button class="btn btn-primary" (click)="updateItem(trips)">Save</button>
+    </div>
+  </div>

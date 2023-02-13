@@ -14,10 +14,7 @@ const httpOptions = {
     providedIn: "root",
 })
 export class ExpenseService {
-    baseUrl = "http://localhost:5000";
     private apiUrl = "http://localhost:5137/expense_items";
-    // private apiUrlCategories = "http://localhost:5137/categories";
-
 
     constructor(private http: HttpClient) {
         console.log("constructor");
@@ -36,7 +33,7 @@ export class ExpenseService {
 
         return total;
     };
-
+    
     getById = (id: number): Observable<ExpenseItems> => {
         let item: Observable<ExpenseItems>;
 
@@ -49,7 +46,7 @@ export class ExpenseService {
     };
 
     save = (expenseItem : ExpenseItems) : Observable<ExpenseItems> => {
-        let item : Observable<ExpenseItems>
+       let item : Observable<ExpenseItems>
     
         if(expenseItem.id) {
           // Perform Update: PUT /expenses/:id
@@ -57,12 +54,19 @@ export class ExpenseService {
     
           item = this.http.put<ExpenseItems>(url, expenseItem, httpOptions)
         } else {
-          // Perform Create: POST /expenses
+          //Perform Create: POST /expenses
           
-          item = this.http.post<ExpenseItems>(this.apiUrl, expenseItem, httpOptions)
+         item = this.http.post<ExpenseItems>(this.apiUrl, expenseItem, httpOptions)
         }
     
-        return item
+       return item
+  
       }
+
+    delete(expenseItem : ExpenseItems) : Observable<ExpenseItems> {
+        const url = `${this.apiUrl}/${expenseItem.id}`;
+        return this.http.delete<ExpenseItems>(url);
+    }
+
 
 }

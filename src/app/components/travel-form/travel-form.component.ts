@@ -10,9 +10,10 @@ import { DestinationItems } from "../../models/destination-items";
 export class TravelFormComponent implements OnInit{
 
     @Input() myDestination: DestinationItems = {
+        id:0,
         destination: "",
-        startDate:new Date(""),
-        endDate: new Date(""),
+        startDate:"",
+        endDate: "",
         days: 0,
         budget: 0,
         expenses: 0,
@@ -21,16 +22,16 @@ export class TravelFormComponent implements OnInit{
     @Output() addDestinationEvent: EventEmitter<DestinationItems> =
         new EventEmitter<DestinationItems>();
     
-    constructor(private tripsService : TripsService) { }
-    ngOnInit(): void {}
+    constructor(private tripsService : TripsService, ) { }
+    ngOnInit(): void {
+        
+    }
 
     addDestination = () => {
-        console.log("Destination added!");
-
-        const e = { ...this.myDestination };
+    const e = { ...this.myDestination };
         this.tripsService.save(e).subscribe((savedTravelItem) => {
             this.addDestinationEvent.emit(savedTravelItem);
-
+            console.log("Trip added!");
           })
     };
 }

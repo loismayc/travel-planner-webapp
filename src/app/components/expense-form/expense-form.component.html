@@ -1,7 +1,10 @@
-
+<div class="card-body">
+  <h5 class="card-title">Category</h5>
+  <app-category-select (categorySelectedEvent)="setCategoryId($event)" ></app-category-select>
+</div>
     <div class="card-body">
       <h5 class="card-title">Item</h5>
-      <input type="text" class="form-control" [(ngModel)]="myExpense.name" />
+      <input type="text" class="form-control" [(ngModel)]="myExpense.name"/>
     </div>
     <div class="card-body">
       <h5 class="card-title">Cost</h5>

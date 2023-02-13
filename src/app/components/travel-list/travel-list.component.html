@@ -3,18 +3,18 @@
     <div class="card">
       <div class="card-body d-flex mb-3">
         <div>
-          <h5 class="card-title">{{myDestination.destination}}</h5>
-          <p class="card-text">Planned dates: {{myDestination.startDate | date}} to {{myDestination.endDate | date}}</p>
-          <p class="card-text">Total # of days: {{myDestination.days}} </p>
-          <p class="card-text">Total Budget: {{myDestination.budget}}</p>
-          <p class="card-text">Total Expenses: {{myDestination.expenses}}</p>
+          <h5 class="card-title">{{trips.destination}}</h5>
+          <p class="card-text">Planned dates: {{trips.startDate | date}} to {{trips.endDate | date}}</p>
+          <p class="card-text">Total # of days: {{trips.days}} </p>
+          <p class="card-text">Total Budget: {{trips.budget}}</p>
+          <p class="card-text" [style.color]="destinationExpenses[trips.id] > trips.budget ? 'red' : 'black'">Total Expenses: {{destinationExpenses[trips.id]}}</p>
         </div>
         <div class="dropdown ms-auto p-1">
           <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="/travel-items/{{myDestination.id}}">Add Expenses</a></li>
-            <li><a class="dropdown-item" href="#" (click)="open()">Edit Destination</a></li>
-            <li><a class="dropdown-item" href="#" (click)="deleteItem(myDestination)">Delete Destination</a></li>
+            <li><a class="dropdown-item" routerLink="/travel-items/{{trips.id}}">Plan Expenses</a></li>
+            <li><a class="dropdown-item" routerLink="/edit-items/{{trips.id}}">Edit Destination</a></li>
+            <li><a class="dropdown-item" href="#" (click)="deleteItem(trips)">Delete Destination</a></li>
           </ul>
         </div>
       </div>

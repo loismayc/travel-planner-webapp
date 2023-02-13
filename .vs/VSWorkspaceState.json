@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\category-select",
+    "\\src\\app\\components\\edit-travel-item"
+  ],
+  "SelectedNode": "\\src\\app\\components\\edit-travel-item\\edit-travel-item.component.ts",
+  "PreviewInSolutionExplorer": false
+}

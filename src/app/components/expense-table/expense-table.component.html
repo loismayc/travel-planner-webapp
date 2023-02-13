@@ -1,28 +1,30 @@
 <div class="row">
-  <!-- <table class="col-sm-3">
-    <tr class="list-group " *ngIf="expense.categoryId == category.id">
-      <td class="list-group-item">{{category.categoryName}}</td>
-    </tr>
-  </table> -->
   <table class="col-sm-3">
     <tr class="list-group ">
       <td class="list-group-item">{{getCategoryName(expense.categoryId)}}</td>
     </tr>
   </table>
   <table class="col-sm-3">
-    <tr class="list-group ">
+    <tr class="list-group">
       <td class="list-group-item">{{expense.name}}</td>
     </tr>
   </table>
-  <table class="col-sm-3">
+  <table class="col-sm-2">
     <tr class="list-group">
       <td class="list-group-item">{{expense.note}}</td>
     </tr>
   </table>
-  <table class="col-sm-3">
+  <table class="col-sm-2">
     <tr class="list-group">
-      <td class="list-group-item">₱ {{expense.cost}}</td>
+      <td class="list-group-item">{{expense.cost}}</td>
+    </tr>
+    </table>
+  <table class="col-sm-1">
+    <tr class="list-group">
+      <td class="list-group-item"><button type="button" class="btn btn-danger btn-sm" (click)="deleteItem(expense)">Delete</button>
+      </td>
     </tr>
   </table>
+  
 </div>
 

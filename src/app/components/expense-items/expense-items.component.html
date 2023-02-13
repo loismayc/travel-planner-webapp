@@ -1,3 +1,5 @@
+<button type="button" class="btn btn-primary btn-sm" (click)="goBack()"> < Back</button>
+
 <div class="container mt-3 mb-3">
   <h3>Total Expenses</h3>
   <h5>{{totalExpenses}}</h5>
@@ -7,31 +9,32 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="card" style="width: 20rem;">
-        <div class="card-body">
-          <h5 class="card-title">Category</h5>
-          <app-category-select (categorySelectedEvent)="setCategoryId($event)"></app-category-select>
-        </div>
-        <app-expense-form ></app-expense-form>
+      
+        <app-expense-form (expenseEvent)="getExpenseItems($event)"></app-expense-form>
       </div>
     </div>
       <div class="col-sm-8">
         <div class="row mb-2">
-          <div class="col fw-bolder">
+          <div class="col fw-bolder col-sm-3">
             Category 
           </div>
-          <div class="col fw-bolder">
+          <div class="col fw-bolder col-sm-3">
             Expense Items
           </div>
-          <div class="col fw-bolder">
+          <div class="col fw-bolder col-sm-2">
             Notes
           </div>
-          <div class="col fw-bolder">
+          <div class="col fw-bolder col-sm-2">
             Cost
           </div>
+          <div class="col  col-sm-2">
+            Action
+          </div>
+    
         </div>
       
         <ng-container *ngFor="let expense of expenses">
-          <app-expense-table [expense]="expense"></app-expense-table>
+          <app-expense-table [expense]="expense" (deleteEvent)="getExpenseItems($event)"></app-expense-table>
         </ng-container>
       </div>
 

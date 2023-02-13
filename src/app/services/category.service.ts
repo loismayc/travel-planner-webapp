@@ -16,7 +16,7 @@ export class CategoryService {
 
 
   constructor(private http: HttpClient) {
-    console.log("constructor");
+  
 }
 
 getCategory = (id: number): Observable<Categories> => {

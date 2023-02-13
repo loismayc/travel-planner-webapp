@@ -5,9 +5,6 @@ import { DestinationItems } from "../models/destination-items";
     providedIn: "root",
 })
 export class BudgetService {
-    constructor() {
-        console.log("constructor");
-    }
 
     computeTotalBudget = (budgetItems: DestinationItems[]): number => {
         let total = 0.0;

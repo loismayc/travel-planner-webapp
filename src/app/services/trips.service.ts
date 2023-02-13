@@ -14,6 +14,7 @@ const httpOptions = {
 })
 export class TripsService {
     private apiUrl = "http://localhost:5137/travel_items";
+    private url =  "http://localhost:5137";
 
     constructor(private http: HttpClient) {}
 
@@ -34,12 +35,13 @@ export class TripsService {
 
     save = (travelItem : DestinationItems) : Observable<DestinationItems> => {
         let item : Observable<DestinationItems>
+        // create item
         if (!travelItem.id){
             item  = this.http.post<DestinationItems>(this.apiUrl,travelItem, httpOptions)
         } else {
+        //update item
             const url = `${this.apiUrl}/${travelItem.id}`;
-  
-          item = this.http.post<DestinationItems>(url, travelItem, httpOptions)
+            item = this.http.put<DestinationItems>(url, travelItem, httpOptions)
     }
         return item
  }
@@ -61,7 +63,6 @@ export class TripsService {
 
         return total;
     }
-
 
   
 }

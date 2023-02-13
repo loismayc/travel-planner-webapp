@@ -1,15 +1,15 @@
 <div class="row">
   <div class="col-sm-6">
-    <h3 class="card-title">Travel Plan Overview</h3>
+    <h3 class="card-title">Overview</h3>
     <hr />
     <h4 class="card-title">Number of Planned Trips:</h4>
-    <h5 class="mb-4"></h5>
+    <h5 class="mb-4"> {{totalRows}}</h5>
 
     <h4 class="card-title">Overall Budget</h4>
-    <h5 class="mb-4">{{totalBudget}} </h5>
+    <h5 class="mb-4">₱ {{totalBudget}} </h5>
 
     <h4 class="card-title">Overall Expenses</h4>
-    <h5 class="mb-4">₱</h5>
+    <h5 class="mb-4" [style.color]="totalExpense > totalBudget ? 'red' : 'black'">₱ {{totalExpense}}</h5>
   </div>
 
     <div class="col-sm-4">
@@ -19,6 +19,7 @@
 
 <div class="row row-cols-1 row-cols-md-3 g-4 pt-5">
 
- 
-  <app-travel-list *ngFor="let list of destinations" [myDestination]="list"></app-travel-list>
+ <ng-container *ngFor="let list of destinations">
+  <app-travel-list  [trips]="list" [expenses]="expenses"(deleteEvent)="handleDestination($event)"></app-travel-list>
+</ng-container>
 </div>

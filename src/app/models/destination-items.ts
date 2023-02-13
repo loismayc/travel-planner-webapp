@@ -1,8 +1,8 @@
 export interface DestinationItems {
-    id?: number;
+    id: number;
     destination: string;
-    startDate: Date;
-    endDate: Date;
+    startDate: string;
+    endDate: string;
     days: number;
     budget: number;
     expenses: number;
