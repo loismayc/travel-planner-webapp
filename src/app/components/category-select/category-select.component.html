@@ -1,4 +1,3 @@
 <select class="form-select" (change)="selectHandler($event)" [(ngModel)]="selectedCategoryId" >
-  <option selected>-- Select Category --</option>
   <option [value]="category.id" *ngFor="let category of categories">{{category.categoryName}}</option>
 </select>

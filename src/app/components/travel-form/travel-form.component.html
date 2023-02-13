@@ -25,3 +25,10 @@
     </div>
   </form>
 </div>
+
+<div *ngIf="showAlert && isSuccessful">
+  <p class="alert alert-success">Save successful!</p>
+</div>
+<div *ngIf="showAlert && !isSuccessful">
+  <p class="alert alert-danger">Save failed. Please try again.</p>
+</div>

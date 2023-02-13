@@ -13,6 +13,8 @@ export class EditTravelItemComponent implements OnInit {
     id: number;
     trips: DestinationItems;
     isLoading = true;
+    isSuccessful = false;
+    showAlert = false;
 
     constructor(
         private route: ActivatedRoute,
@@ -34,10 +36,29 @@ export class EditTravelItemComponent implements OnInit {
     updateItem = (item: DestinationItems) => {
         this.tripService.save(item).subscribe((savedTravelItem) => {
             this.updateItemEvent.emit(savedTravelItem);
+            this.isSuccessful = true;
+            this.showAlert = true;
+
+            setTimeout(() => {
+                this.showAlert = false;
+              }, 3000);
+
             console.log("Update successful");
             this.ngOnInit();
+        },
+        (error) => {
+          this.isSuccessful = false;
+          this.showAlert = true;
+
+          setTimeout(() => {
+            this.showAlert = false;
+          }, 3000);
+
+          console.error("Update failed:", error);
+    
         });
-        this.location.back();
+      
+        // this.location.back();
     };
 
     goBack() {

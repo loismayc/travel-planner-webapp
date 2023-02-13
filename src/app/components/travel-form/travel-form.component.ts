@@ -8,6 +8,9 @@ import { DestinationItems } from "../../models/destination-items";
     styleUrls: ["./travel-form.component.scss"],
 })
 export class TravelFormComponent implements OnInit {
+    isSuccessful = false;
+    showAlert = false;
+
     @Input() myDestination: DestinationItems = {
         id: 0,
         destination: "",
@@ -29,6 +32,23 @@ export class TravelFormComponent implements OnInit {
         this.tripsService.save(e).subscribe((savedTravelItem) => {
             this.addDestinationEvent.emit(savedTravelItem);
             console.log("Trip added!");
+            this.isSuccessful = true;
+            this.showAlert = true;
+
+            setTimeout(() => {
+                this.showAlert = false;
+              }, 3000);
+        },
+        (error) => {
+          this.isSuccessful = false;
+          this.showAlert = true;
+
+          setTimeout(() => {
+            this.showAlert = false;
+          }, 3000);
+
+          console.error("Update failed:", error);
+    
         });
     };
 }

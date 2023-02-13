@@ -17,5 +17,12 @@
         <textarea class="form-control" [(ngModel)]="myExpense.note"></textarea>
       </div> <button class="btn btn-primary mt-3" (click)="addButton()">Add Expense</button>
     </div>
-   
+
+    <div *ngIf="showAlert && isSuccessful">
+      <p class="alert alert-success">Save successful!</p>
+    </div>
+    <div *ngIf="showAlert && !isSuccessful">
+      <p class="alert alert-danger">Save failed. Please try again.</p>
+    </div>
+
 

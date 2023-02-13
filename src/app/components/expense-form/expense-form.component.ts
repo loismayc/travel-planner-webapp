@@ -13,6 +13,8 @@ export class ExpenseFormComponent implements OnInit {
     selectedTravelItemId: number;
     selectedCategoryId: number;
     expenseItems: ExpenseItems[] = [];
+    isSuccessful = false;
+    showAlert = false;
 
     constructor(
         private expenseItemsService: ExpenseService,
@@ -45,8 +47,23 @@ export class ExpenseFormComponent implements OnInit {
         this.expenseItemsService.save(e).subscribe((savedExpenseItem) => {
             console.log(savedExpenseItem);
             this.expenseEvent.emit(savedExpenseItem);
-        });
+            this.isSuccessful = true;
+            this.showAlert = true;
 
-        console.log("Expense added!");
+            setTimeout(() => {
+                this.showAlert = false;
+              }, 3000);
+        },
+        (error) => {
+          this.isSuccessful = false;
+          this.showAlert = true;
+
+          setTimeout(() => {
+            this.showAlert = false;
+          }, 3000);
+
+          console.error("Update failed:", error);
+    
+        });
     };
 }

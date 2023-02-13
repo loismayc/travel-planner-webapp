@@ -2,7 +2,6 @@
 <div class="modal-content">
     <div class="modal-header text-center">
       <h4 class="modal-title w-100 font-weight-bold">Edit Destination</h4>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body mx-3">
       <div class="col" *ngIf="!isLoading">
@@ -29,4 +28,11 @@
     <div class="modal-footer d-flex justify-content-center">
       <button class="btn btn-primary" (click)="updateItem(trips)">Save</button>
     </div>
-  </div>
+   
+
+    <div *ngIf="showAlert && isSuccessful">
+      <p class="alert alert-success">Save successful!</p>
+    </div>
+    <div *ngIf="showAlert && !isSuccessful">
+      <p class="alert alert-danger">Save failed. Please try again.</p>
+    </div>
